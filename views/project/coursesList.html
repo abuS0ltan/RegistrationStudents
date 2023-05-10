@@ -1,0 +1,93 @@
+<style>
+  .btnGroupContainer{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.NotificationsP{
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem;
+    border-radius: .325rem;
+}
+</style>
+{{extend 'myLayout.html'}}
+<div class="overlay">
+    <div class="container">
+        <div class="row row1">
+            <div class="col-12 my-5">
+                <h1 class="mainTitle mainTitle2">
+                    Courses List
+                </h1>
+                <!-- <p class="info">With us, you can control and perform all your registration processes.</p> -->
+            </div>
+            <div class="search col-md-6">
+            <div class="">
+              <label for="" class="myNewLabel">Search by code</label>
+                <div class="search-div">
+                    <input type="search" placeholder="Search by code..." class="form-control my-2" id="searchCode" >
+                </div>
+            </div>
+            <div class="">
+              <label for="" class="myNewLabel">Search by course name.</label>
+                <div class="search-div">
+                    <input type="search" placeholder="Search by course name..." class="form-control my-2" id="searchName" >
+                </div>
+            </div>
+            <div class="">
+                <label for="" class="myNewLabel">Search by instructor name</label>
+                <div class="search-div">
+                    <input type="search" placeholder="Search by instructor name..." class="form-control my-2" id="searchInstructor" >
+                </div>
+            </div>
+          </div>
+            <div class="col-md-6">
+              <div class="btnGroupContainer">
+                <button type="button" class="btn btn-secondary suggestedBtn d-block">Suggested Courses</button>
+              </div>
+              <div class="btnGroupContainer">
+                  <button type="button" class="btn btn-dark allBtn d-block">All Courses</button>
+              </div>
+              
+            </div>
+            <div class="col-12">
+              
+                    <table class="table text-dark data text-center my-5">
+                        <thead>
+                        <tr class="row">
+                            <th class="col-3 needtowrap">Code</th>
+                            <th class="col-4 needtowrap">Name</th>
+                            <th class="col-5 needtowrap">Achion</th>
+                        </tr>
+                        </thead>
+                        <tbody class="coursesDataTable">
+                          
+                        </tbody>
+                      </table>
+                
+            </div>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Notifications</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary close2" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+<script src="{{=URL('static','js/coursesListJs.js')}}"></script>

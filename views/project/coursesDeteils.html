@@ -1,0 +1,55 @@
+<style>
+    span{
+        color: aliceblue;
+        background-color: rgb(0, 0, 0,.9);
+        padding: .2rem;
+        border-radius: .5rem;
+
+    }
+</style>
+{{extend 'myLayout.html'}}
+<div class="overlay">
+    <div class="container my-5">
+        <h1 class="mainTitle mainTitle2">
+            Courses Deteils
+        </h1>
+        <div class="card my-5">
+            <div class="card-header">
+                Courses Deteils
+
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote mb-0">
+                <span>
+                    code: 
+                </span><p>{{=code}}</p>
+                <span>
+                    Description: 
+                </span><p>{{=Description}}</p>
+                <span>
+                    Instructor: 
+                </span><p>{{=Instructor}}</p>
+                <span>
+                    Prerequisites:
+                </span><p>{{=Prerequisites}}</p>
+                <span>
+                    Days:
+                </span><p>{{=Days}}</p>
+                <span>
+                    Time:
+                </span><p>{{=Time}}</p>
+                <span>
+                    Room:
+                </span><p>{{=Room}}</p>
+                <span>
+                    Capacity:
+                </span><p>{{=Capacity}}</p>
+              </blockquote>
+            </div>
+          </div>
+          <div class="test pb-5">
+            <a href="/{{=request.application}}/project/coursesList" class="btn btn-dark m-auto p-2 my-5 text-light">Back</a>
+          </div>
+          
+    </div>
+</div>

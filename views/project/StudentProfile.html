@@ -1,0 +1,92 @@
+<style>
+    .btnGroupContainer{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.NotificationsP{
+    background-color: black;
+    color: aliceblue;
+    padding: 1rem;
+    border-radius: .325rem;
+}
+</style>
+{{extend 'myLayout.html'}}
+<div class="overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 my-5">
+            <h1 class="mainTitle mainTitle2">
+                {{if auth.user.id==1:}}
+                Profile And Control Panal
+                {{else:}}
+                Profile
+                {{pass}}
+                
+            </h1>
+            <!-- <p class="info">With us, you can control and perform all your registration processes.</p> -->
+        </div>
+        <div class="profileContent col-12">
+            <div class="card">
+                {{if auth.user.id==1:}}
+                <h2 class="card-header">Admin Information</h5>
+                {{else:}}
+                <h2 class="card-header">Student Information</h5>
+                {{pass}}
+                <div class="card-body">
+                  <p class="card-text">Id: {{=auth.user.id}}.</p>
+                  <p class="card-text">First Name : {{=auth.user.first_name}}.</p>
+                  <p class="card-text">Last Name : {{=auth.user.last_name}}.</p>
+                  <p class="card-text">Email : {{=auth.user.email}}.</p>
+                  {{if auth.user.id!=1:}}
+                  <p class="card-text">Number of courses : {{=coursesCount}}.</p>
+                  {{pass}}
+                </div>
+              </div>
+        </div>
+        {{if auth.user.id==1:}}
+        <div class="controlPanalContent my-5 col-12">
+                <div class=" my-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Analytics </h5>
+                      <p class="card-text">Reports and analytics on course enrollment.</p>
+                      <a href="/{{=request.application}}/project/analytics" class="btn btn-dark">Go to Analytics</a>
+                    </div>
+                  </div>
+                </div>
+                  
+              
+        </div>
+        {{pass}}
+    </div>
+  </div>
+    <div class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Notifications</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p class="modalCode"></p>
+            <p class="modalDescription"></p>
+            <p class="modalInstructor"></p>
+            <p class="modalDays"></p>
+            <p class="modalTime"></p>
+            <p class="modalRoom"></p>
+            <p class="modalPrerequisites"> </p>
+            <p class="modalCapacity">Capacity: </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close2" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>
+<script src="{{=URL('static','js/StudentProfile.js')}}"></script>
