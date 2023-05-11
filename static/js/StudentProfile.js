@@ -49,5 +49,5 @@ function notificationsDisplay(){
 
 //------------------------------end notifications btn-----------------------------
 async function displayBadge(){
-    badge.innerHTML=notificationsData.length+1;
+    badge.innerHTML=notificationsData.length;
 }

@@ -1,7 +1,7 @@
-auth.settings.expiration=1800
+auth.settings.expiration=900
 @auth.requires_login()
 def coursesList():
-    auth.settings.expiration=1800
+    auth.settings.expiration=900
     return locals()
 @auth.requires_login()
 def coursesData():
@@ -11,10 +11,9 @@ def coursesData():
 def schedulesData():
     rows=db(db.courseSchedules).select()
     return locals()
-auth.settings.expiration = 1 
 @auth.requires_login()
 def yourCourses():
-    auth.settings.expiration=1800
+    auth.settings.expiration=900
     return locals()
 @auth.requires_login()
 def regsData():
@@ -34,11 +33,11 @@ def addCourse():
 @auth.requires_login()
 @auth.requires_login()
 def newsData():
-    rows=db(db.news).select(orderby=~db.news.timeAndDate)
+    rows=db(db.notifications).select(orderby=~db.notifications.id)
     return locals()
 @auth.requires_login()
 def StudentProfile():
-    auth.settings.expiration=1800
+    auth.settings.expiration=900
     coursesCount=db(db.studentsRegs.studentId==auth.user.id).count()
     return locals()
 @auth.requires_login()
@@ -59,7 +58,8 @@ def analytics():
     return locals()
 # -------------------------courses deteils-----------------------------------
 @auth.requires_login()
-def coursesDeteils():         
+def coursesDeteils(): 
+    auth.settings.expiration=900        
     code  = request.args(0)
     name  = request.args(1)
     Description = request.args(2)
